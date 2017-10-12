@@ -2,7 +2,7 @@
  * @Author: Joker 
  * @Date: 2017-10-10 17:18:20 
  * @Last Modified by: Joker
- * @Last Modified time: 2017-10-11 08:49:53
+ * @Last Modified time: 2017-10-11 10:54:06
  */
 'use strict'
 
@@ -19,6 +19,17 @@ module.exports = (appInfo) => {
       user: 'cdb_outerroot',
       password: 'lixueqing1127##',
       database: 'luojiStore'
+    }
+  }
+  // oauth2.0 验证
+  config.oAuth2Server = {
+    debug: appInfo.env === 'local',
+    grants: ['password']
+  }
+  // egg-security 安全插件配置
+  config.security = {
+    csrf: {
+      enable: false
     }
   }
 
